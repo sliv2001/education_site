@@ -1,12 +1,12 @@
 from django.http import HttpResponse
+from django.shortcuts import render
 from .models import Country
-from .utils import fill_countries
 
 def index(request):
     total_countries = Country.objects.count()
-    if total_countries == 0:
-        fill_countries()
     context = {
         'total_countries': total_countries,
+        'user_is_auth': request.user.is_authenticated,
+        'username': request.user.username
     }
-    return HttpResponse("This is the site mock.")
+    return render(request, "index.html", context=context)
