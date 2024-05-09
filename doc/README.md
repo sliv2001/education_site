@@ -33,5 +33,6 @@ Tables are responsible for storing following data:
 - Users: table, containing data about each user. Intended to be managed by internal Django means.
 - Learning rate: table, containing statistics for each country and each user. It must include:
     - number of times the country was shown
-    - percentage of correctly answered test questions for the country
+    - number of correctly answered test questions for the country
+    - total number of tests where the country appeared
 
