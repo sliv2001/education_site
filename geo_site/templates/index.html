@@ -9,10 +9,13 @@
 {% if user_is_auth %}
 Добро пожаловать, {{username}}! Ваши результаты за последнее время:
 
-
+Стран изучено: {{learned_countries}}
 
 {% else %}
 Добро пожаловать! На этом сайте вы можете изучить столицы различных государств. В данный момент в базе есть {{total_countries}} государств и их столиц.
+
+<a class="btn btn-primary" href="accounts/login" role="button">Войти</a>
+
 {% endif %}
 
 {% endblock %}
