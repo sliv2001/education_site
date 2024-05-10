@@ -92,3 +92,24 @@ def hoorah(request):
         'username': request.user.username,
     }
     return render(request, "hoorah.html", context=context)
+
+def test(request):
+    if (request.method=='POST'):
+        if request.session['capital'] == request.POST.get('capital', ""):
+            return redirect(hoorah)
+        else:
+            request.session['wrong_answer'] = True
+            return redirect(test)
+        
+    # GET request
+    learn_rates = LearnRate.objects.filter(repetition_number__gt=0, user=request.user)
+    learn_rate = random.choice(learn_rates)
+    country = learn_rate.country.name
+    request.session['capital'] = learn_rate.country.capital
+    context={
+        'user_is_auth': request.user.is_authenticated,
+        'username': request.user.username,
+        'country': country,
+        'wrong_answer': request.session['wrong_answer']
+    }
+    return render(request, "test.html", context=context)
