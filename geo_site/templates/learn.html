@@ -1,0 +1,20 @@
+{% extends "base_page.html" %}
+
+{% block pagetitle %}
+Столицы государств. {{country}}
+{% endblock %}
+
+{% block content %}
+<p>
+    Столица государства {{country}} -- {{capital}}
+</p>
+<p>
+    Кстати, эта страна находится в регионе {{region}}
+</p>
+{% if current_number == 4 %}
+    <a class="btn btn-primary" href="{{next_number}}" role="button">Я всё запомнил!</a>
+{% else %}
+    <a class="btn btn-primary" href="{{next_number}}" role="button">Я запомнил!</a>
+{% endif %}
+
+{% endblock %}
