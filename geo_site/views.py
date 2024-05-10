@@ -9,4 +9,6 @@ def index(request):
         'username': request.user.username,
         'learned_countries': LearnRate.objects.filter(repetition_number__gt=0, user=request.user).count() if request.user.is_authenticated else 0,
     }
+    # if request.method == 'POST':
+
     return render(request, "index.html", context=context)

@@ -17,21 +17,8 @@
             </a>
         </header>
         <div class="row">
-            <div class="col-9">
-                {% block content %}{% endblock %}
-            </div>
             <div class="col">
-                {% if user_is_auth %}
-                    <p>
-                        Здравствуйте, {{username}}!
-                    </p>
-                    <p>
-                        <a class="btn btn-primary" href="accounts/signout" role="button">Выйти</a>
-                    </p>
-                {% else %}
-                    <a class="btn btn-primary" href="accounts/login" role="button">Войти</a>
-                    <a class="btn btn-primary" href="accounts/signup" role="button">Зарегистрироваться</a>
-                {% endif %}
+                {% block content %}{% endblock %}
             </div>
         </div>
         <footer class="footer">© Ivan Sladkov, <a href=mailto:sladkov.is@phystech.edu>sladkov.is@phystech.edu</a>, 2024</footer>
