@@ -1,3 +1,3 @@
-from django.contrib import admin
-
-# Register your models here.
+"""
+Mock of the module stating all database tables accessible from admin panel.
+"""

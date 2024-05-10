@@ -1,5 +1,7 @@
-from django.urls import path, include
-from django.contrib.auth import views as auth_views
+"""
+The module contains url mappings to corresponding views.
+"""
+from django.urls import path
 from . import views
 
 urlpatterns = [
