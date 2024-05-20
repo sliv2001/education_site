@@ -1,0 +1,25 @@
+{% extends "base_page.html" %}
+
+{% block pagetitle %}
+Столицы государств
+{% endblock %}
+
+{% block content %}
+
+{% if wrong_answer %}
+    <p>
+        Попробуйте ещё раз :)
+    </p>
+{% endif %}
+    <p>
+        Какая столица у государства {{country}}?
+    </p>
+    <p>
+        <form method="post" action="">
+            {% csrf_token %}
+            <p>Столица:<br> <input name="capital" /></p>
+            <button class="btn btn-outline-info" type="submit">Проверить</button>
+        </form>
+    </p>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base_page.html" %}
+
+{% block pagetitle %}
+Столицы государств
+{% endblock %}
+
+{% block content %}
+
+{% if user_is_auth %}
+<p>
+Добро пожаловать! Ваши результаты за время изучения:
+</p>
+<p>
+Стран изучено: {{learned_countries}}
+</p>
+<p>
+    <a class="btn btn-primary" href="learn" role="button">Вперёд к изучению!</a>
+</p>
+<p>
+    <a class="btn btn-primary" href="test" role="button">Пройти небольшой тест</a>
+</p>
+{% else %}
+Добро пожаловать! На этом сайте вы можете изучить столицы различных государств. В данный момент в базе есть {{total_countries}} государств и их столиц.
+
+{% endif %}
+
+{% endblock %}

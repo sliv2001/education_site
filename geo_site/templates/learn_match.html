@@ -1,0 +1,41 @@
+{% extends "base_page.html" %}
+
+{% block pagetitle %}
+Столицы государств
+{% endblock %}
+
+{% block content %}
+
+{% if wrong_answer %}
+    <p>
+        Попробуйте ещё раз :)
+    </p>
+{% else %}
+    <p>
+        Попробуйте сопоставить страны и их столицы:
+    </p>
+{% endif %}
+
+<form method="post" action="">
+{% for country, capital in countries %}
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                Столица государства {{country}}:
+            </div>
+            <div class="col">
+                    {% csrf_token %}
+                    <select name="{{country}}" class="form-select" aria-label="Default select example">
+                        <option selected>Open this select menu</option>
+                        {% for country1, capital1 in countries %}
+                            <option value="{{capital1}}">{{capital1}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <button class="btn btn-outline-info" type="submit">Проверить</button>
+</form>
+
+{% endblock %}
