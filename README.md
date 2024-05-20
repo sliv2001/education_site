@@ -2,6 +2,10 @@
 
 This is small Django-based project for Python course. The site is designed for user to learn capitals of different countries of the world. It has pages for learning capitals of countries and user testing. It gives some statistics and configuration as well.
 
+## Video presentation
+
+Following [the link](https://disk.yandex.ru/i/WDJFTTRkF2M5fQ), you can get short video presentation of the project.
+
 ## On running
 
 In order to view the site you need to do following:
